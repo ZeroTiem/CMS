@@ -48,3 +48,25 @@ Scenario: Category刪除一筆ByCategoryID
 	| 2            | 2    | 2             | test2         | test2         |
 	When 透過Delete方法刪除第一筆資料
 	Then 要跟預期內容一樣
+
+Scenario: Category查詢分頁
+	Given 新增測試資料
+	| CategoryName | Kind | publishStatus | CreateAccount | CreateDateTime | ModfiyAccount | ModfiyDateTime |
+	| 1            | 1    | 1             | test1         | 2017-02-27     | test1         | 2017-02-27     |
+	| 2            | 2    | 2             | test2         | 2017-02-27     | test2         | 2017-02-27     |
+	| 3            | 3    | 3             | test3         | 2017-02-27     | test3         | 2017-02-27     |
+	| 4            | 4    | 4             | test4         | 2017-02-27     | test4         | 2017-02-27     |
+	| 5            | 5    | 5             | test5         | 2017-02-27     | test5         | 2017-02-27     |
+	| 6            | 6    | 6             | test6         | 2017-02-27     | test6         | 2017-02-27     |
+	| 7            | 7    | 7             | test7         | 2017-02-27     | test7         | 2017-02-27     |
+	| 8            | 8    | 8             | test8         | 2017-02-27     | test8         | 2017-02-27     |
+	| 9            | 9    | 9             | test9         | 2017-02-27     | test9         | 2017-02-27     |
+	| 10           | 10   | 10            | test10        | 2017-02-27     | test10        | 2017-02-27     |
+	And 預期回傳資料
+	| CategoryName | Kind | publishStatus | CreateAccount | ModfiyAccount |
+	| 7            | 7    | 7             | test7         | test7         |
+	| 8            | 8    | 8             | test8         | test8         |
+	| 9            | 9    | 9             | test9         | test9         |
+	| 10           | 10   | 10            | test10        | test10        |
+	When 透過GetByPage方法取第7筆取4筆
+	Then 要跟預期內容一樣

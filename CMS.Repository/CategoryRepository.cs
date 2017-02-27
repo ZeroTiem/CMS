@@ -87,12 +87,31 @@ namespace CMS.Repository
             }    
         }
 
+        /// <summary>
+        /// 分頁
+        /// </summary>
+        /// <param name="categoryID"></param>
+        /// <returns></returns>
         public Category GetByCategoryID(int categoryID)
         {
             try
             {
                 var categoryEntities = _cmsEntities.Categories.Find(categoryID);
                 return categoryEntities;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public IEnumerable<Category> GetByPage(int skip, int take)
+        {
+            try
+            {
+                var categorys = _cmsEntities.Categories.OrderBy(x => x.CategoryID).Skip(skip - 1).Take(take);
+                return categorys;
             }
             catch (Exception e)
             {

@@ -81,15 +81,15 @@ namespace CMS.RepositoryTests
             ScenarioContext.Current.Set(act, "act");
         }
 
-        [When(@"透過GetByCategoryID方法查詢第一筆資料")]
-        public void When透過GetByCategoryID方法查詢第一筆資料()
-        {
-            var CategoryID = _CmsEntitiesTest.Categories.FirstOrDefault().CategoryID;
-            var category = _ClassRepository.GetByCategoryID(CategoryID);
-            var act = new List<Category>();
-            act.Add(category);
-            ScenarioContext.Current.Set(act, "act");
-        }
+        //[When(@"透過GetByCategoryID方法查詢第一筆資料")]
+        //public void When透過GetByCategoryID方法查詢第一筆資料()
+        //{
+        //    var CategoryID = _CmsEntitiesTest.Categories.FirstOrDefault().CategoryID;
+        //    var category = _ClassRepository.GetByCategoryID(CategoryID);
+        //    var act = new List<Category>();
+        //    act.Add(category);
+        //    ScenarioContext.Current.Set(act, "act");
+        //}
 
         [When(@"透過GetByCategoryID方法查詢第 (.*) 筆資料")]
         public void When透過GetByCategoryID方法查詢第筆資料(int countNumber)
@@ -102,6 +102,13 @@ namespace CMS.RepositoryTests
             ScenarioContext.Current.Set(act, "act");
         }
 
+        [When(@"透過GetByPage方法取第(.*)筆取(.*)筆")]
+        public void When透過GetByPage方法取第筆取筆(int skip, int take)
+        {
+            var category = _CmsEntitiesTest.Categories.OrderBy(x => x.CategoryID).Skip(skip - 1).Take(take);
+            var act = _ClassRepository.GetByPage(skip, take);
+            ScenarioContext.Current.Set(act, "act");
+        }
 
         [When(@"透過Delete方法刪除第一筆資料")]
         public void When透過Delete方法刪除第一筆資料()
@@ -111,7 +118,6 @@ namespace CMS.RepositoryTests
             var act = _CmsEntitiesTest.Categories.AsNoTracking().Where(x=>x.DeleteFalg == 0);
             ScenarioContext.Current.Set(act, "act");
         }
-
 
         [Then(@"要跟預期內容一樣")]
         public void Then要跟預期內容一樣()

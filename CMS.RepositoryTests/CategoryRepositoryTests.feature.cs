@@ -295,6 +295,146 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Category查詢分頁")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CategoryRepositoryTests")]
+        public virtual void Category查詢分頁()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Category查詢分頁", ((string[])(null)));
+#line 52
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "CategoryName",
+                        "Kind",
+                        "publishStatus",
+                        "CreateAccount",
+                        "CreateDateTime",
+                        "ModfiyAccount",
+                        "ModfiyDateTime"});
+            table10.AddRow(new string[] {
+                        "1",
+                        "1",
+                        "1",
+                        "test1",
+                        "2017-02-27",
+                        "test1",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "2",
+                        "2",
+                        "2",
+                        "test2",
+                        "2017-02-27",
+                        "test2",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "3",
+                        "3",
+                        "3",
+                        "test3",
+                        "2017-02-27",
+                        "test3",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "4",
+                        "4",
+                        "4",
+                        "test4",
+                        "2017-02-27",
+                        "test4",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "5",
+                        "5",
+                        "5",
+                        "test5",
+                        "2017-02-27",
+                        "test5",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "6",
+                        "6",
+                        "6",
+                        "test6",
+                        "2017-02-27",
+                        "test6",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "7",
+                        "7",
+                        "7",
+                        "test7",
+                        "2017-02-27",
+                        "test7",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "8",
+                        "8",
+                        "8",
+                        "test8",
+                        "2017-02-27",
+                        "test8",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "9",
+                        "9",
+                        "9",
+                        "test9",
+                        "2017-02-27",
+                        "test9",
+                        "2017-02-27"});
+            table10.AddRow(new string[] {
+                        "10",
+                        "10",
+                        "10",
+                        "test10",
+                        "2017-02-27",
+                        "test10",
+                        "2017-02-27"});
+#line 53
+ testRunner.Given("新增測試資料", ((string)(null)), table10, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "CategoryName",
+                        "Kind",
+                        "publishStatus",
+                        "CreateAccount",
+                        "ModfiyAccount"});
+            table11.AddRow(new string[] {
+                        "7",
+                        "7",
+                        "7",
+                        "test7",
+                        "test7"});
+            table11.AddRow(new string[] {
+                        "8",
+                        "8",
+                        "8",
+                        "test8",
+                        "test8"});
+            table11.AddRow(new string[] {
+                        "9",
+                        "9",
+                        "9",
+                        "test9",
+                        "test9"});
+            table11.AddRow(new string[] {
+                        "10",
+                        "10",
+                        "10",
+                        "test10",
+                        "test10"});
+#line 65
+ testRunner.And("預期回傳資料", ((string)(null)), table11, "And ");
+#line 71
+ testRunner.When("透過GetByPage方法取第7筆取4筆", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
+ testRunner.Then("要跟預期內容一樣", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
