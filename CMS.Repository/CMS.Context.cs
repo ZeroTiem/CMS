@@ -25,6 +25,8 @@ namespace CMS.Repository
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<File> File { get; set; }
+        public virtual DbSet<Article> Articles { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<File> Files { get; set; }
     }
 }

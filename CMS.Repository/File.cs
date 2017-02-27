@@ -15,8 +15,8 @@ namespace CMS.Repository
     public partial class File
     {
         public int FileID { get; set; }
-        public int KindID { get; set; }
-        public string Category { get; set; }
+        public int CategoryID { get; set; }
+        public string Tags { get; set; }
         public string Title { get; set; }
         public string FileUrl { get; set; }
         public Nullable<System.DateTime> StratDateTime { get; set; }
@@ -25,6 +25,7 @@ namespace CMS.Repository
         public System.DateTime CreateDateTime { get; set; }
         public string ModifyAccount { get; set; }
         public System.DateTime ModifyDateTime { get; set; }
-        public int Status { get; set; }
+        public int PublishStatus { get; set; }
+        public int DeleteFalg { get; set; }
     }
 }

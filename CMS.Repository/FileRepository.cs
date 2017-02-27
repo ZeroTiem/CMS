@@ -24,7 +24,7 @@ namespace CMS.Repository
                 file.CreateDateTime = datetimeTW;
                 file.ModifyDateTime = datetimeTW;
 
-                _cmsEntities.File.Add(file);
+                _cmsEntities.Files.Add(file);
                 _cmsEntities.SaveChanges();
                 return true;
             }
@@ -40,7 +40,7 @@ namespace CMS.Repository
             try
             {
 
-                var update = _cmsEntities.File.Find(file.FileID);
+                var update = _cmsEntities.Files.Find(file.FileID);
                 update.FileUrl = file.FileUrl;
                 _cmsEntities.SaveChanges();
                 return true;
@@ -56,10 +56,10 @@ namespace CMS.Repository
         {
             try
             {
-                var delete = _cmsEntities.File.Find(ID);
+                var delete = _cmsEntities.Files.Find(ID);
                 if (delete != null)
                 {
-                    _cmsEntities.File.Remove(delete);
+                    _cmsEntities.Files.Remove(delete);
                     _cmsEntities.SaveChanges();
                     
                 }
@@ -72,18 +72,18 @@ namespace CMS.Repository
             }
         }
 
-        public IEnumerable<File> SearchByCategory(string Category)
-        {
-            try
-            {
-                var files = _cmsEntities.File.Where(x => x.Category==Category);
-                return files;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-        }
+        //public IEnumerable<File> SearchByCategory(string Category)
+        //{
+        //    try
+        //    {
+        //        var files = _cmsEntities.Files.Where(x => x.c==Category);
+        //        return files;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e);
+        //        throw;
+        //    }
+        //}
     }
 }
