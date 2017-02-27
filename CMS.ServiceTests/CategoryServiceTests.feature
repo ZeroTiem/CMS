@@ -27,7 +27,7 @@ Scenario: Category查詢ByCategoryID邏輯
 	When 使用GetByCategoryID方法
 	Then 要跟預期內容一樣
 
-Scenario: Category查詢Page邏輯
+Scenario: Category查詢分頁邏輯
 	Given 預期回傳
 	| CategoryName | Kind | publishStatus | CreateAccount | CreateDateTime | ModfiyAccount | ModfiyDateTime |
 	| test         | 1    | 1             | test          | 2017-02-27     | test          | 2017-02-27     |

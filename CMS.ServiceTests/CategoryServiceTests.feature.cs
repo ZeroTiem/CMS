@@ -171,11 +171,11 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Category查詢Page邏輯")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Category查詢分頁邏輯")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "CategoryServiceTests")]
-        public virtual void Category查詢Page邏輯()
+        public virtual void Category查詢分頁邏輯()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Category查詢Page邏輯", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Category查詢分頁邏輯", ((string[])(null)));
 #line 30
 this.ScenarioSetup(scenarioInfo);
 #line hidden
