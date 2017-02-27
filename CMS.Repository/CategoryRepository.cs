@@ -88,7 +88,7 @@ namespace CMS.Repository
         }
 
         /// <summary>
-        /// 分頁
+        /// 搜尋
         /// </summary>
         /// <param name="categoryID"></param>
         /// <returns></returns>
@@ -106,6 +106,12 @@ namespace CMS.Repository
             }
         }
 
+        /// <summary>
+        /// 分頁
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <returns></returns>
         public IEnumerable<Category> GetByPage(int skip, int take)
         {
             try

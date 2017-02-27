@@ -11,13 +11,13 @@ namespace CMS.RepositoryTests
     [Scope(Feature = "CategoryRepositoryTests")]
     public class CategoryRepositoryTestsSteps
     {
-        public ICategoryRepository _ClassRepository;
+        public ICategoryRepository _CategoryRepository;
         public CMSEntities _CmsEntitiesTest;
 
         [BeforeScenario]
         public void BeforeScenario()
         {
-            _ClassRepository = new CategoryRepository();
+            _CategoryRepository = new CategoryRepository();
             _CmsEntitiesTest = new CMSEntities();
             _CmsEntitiesTest.Categories.RemoveRange(_CmsEntitiesTest.Categories);
             _CmsEntitiesTest.SaveChanges();
@@ -66,7 +66,7 @@ namespace CMS.RepositoryTests
         {
             //bool result = false;
             var category = ScenarioContext.Current.Get<Category>("category");
-            _ClassRepository.Add(category);
+            _CategoryRepository.Add(category);
             var act = _CmsEntitiesTest.Categories.AsNoTracking();
             ScenarioContext.Current.Set(act, "act");
         }
@@ -76,7 +76,7 @@ namespace CMS.RepositoryTests
         {
             var CategoryID = _CmsEntitiesTest.Categories.FirstOrDefault().CategoryID;
             var category = ScenarioContext.Current.Get<Category>("category");
-            _ClassRepository.Update(CategoryID, category);
+            _CategoryRepository.Update(CategoryID, category);
             var act = _CmsEntitiesTest.Categories.AsNoTracking();
             ScenarioContext.Current.Set(act, "act");
         }
@@ -85,7 +85,7 @@ namespace CMS.RepositoryTests
         //public void When透過GetByCategoryID方法查詢第一筆資料()
         //{
         //    var CategoryID = _CmsEntitiesTest.Categories.FirstOrDefault().CategoryID;
-        //    var category = _ClassRepository.GetByCategoryID(CategoryID);
+        //    var category = _CategoryRepository.GetByCategoryID(CategoryID);
         //    var act = new List<Category>();
         //    act.Add(category);
         //    ScenarioContext.Current.Set(act, "act");
@@ -96,7 +96,7 @@ namespace CMS.RepositoryTests
         {
             var CategoryID = _CmsEntitiesTest.Categories.OrderBy(x=>x.CategoryID).Skip(countNumber-1).Take(1)
                 .FirstOrDefault().CategoryID;
-            var category = _ClassRepository.GetByCategoryID(CategoryID);
+            var category = _CategoryRepository.GetByCategoryID(CategoryID);
             var act = new List<Category>();
             act.Add(category);
             ScenarioContext.Current.Set(act, "act");
@@ -106,7 +106,7 @@ namespace CMS.RepositoryTests
         public void When透過GetByPage方法取第筆取筆(int skip, int take)
         {
             var category = _CmsEntitiesTest.Categories.OrderBy(x => x.CategoryID).Skip(skip - 1).Take(take);
-            var act = _ClassRepository.GetByPage(skip, take);
+            var act = _CategoryRepository.GetByPage(skip, take);
             ScenarioContext.Current.Set(act, "act");
         }
 
@@ -114,7 +114,7 @@ namespace CMS.RepositoryTests
         public void When透過Delete方法刪除第一筆資料()
         {
             var CategoryID = _CmsEntitiesTest.Categories.FirstOrDefault().CategoryID;
-            _ClassRepository.Delete(CategoryID);
+            _CategoryRepository.Delete(CategoryID);
             var act = _CmsEntitiesTest.Categories.AsNoTracking().Where(x=>x.DeleteFalg == 0);
             ScenarioContext.Current.Set(act, "act");
         }
