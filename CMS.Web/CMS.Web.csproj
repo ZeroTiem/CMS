@@ -213,9 +213,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryApiController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ClassController.cs" />
+    <Compile Include="Controllers\DefaultUserController.cs" />
     <Compile Include="Controllers\FileManageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -227,9 +229,11 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CategoryManageViewModel.cs" />
     <Compile Include="ViewModels\CategoryAddViewModel.cs" />
     <Compile Include="ViewModels\CategoryIndexViewModel.cs" />
     <Compile Include="ViewModels\CategoryUpdateViewModel.cs" />
+    <Compile Include="ViewModels\DefaultUserCategoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\CMS.mdf">
@@ -302,8 +306,12 @@
     <Content Include="Views\Category\Add.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
+    <Content Include="Views\Category\Manage.cshtml" />
+    <Content Include="Views\DefaultUser\Category.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Article\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

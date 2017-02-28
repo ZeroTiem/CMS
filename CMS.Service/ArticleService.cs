@@ -24,6 +24,11 @@ namespace CMS.Service
             _articleRepository = articleRepository;
         }
 
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="ArticleInfo"></param>
+        /// <returns></returns>
         public bool Add(ArticleInfo ArticleInfo)
         {
             try
@@ -44,6 +49,12 @@ namespace CMS.Service
             }
         }
 
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="articleId"></param>
+        /// <param name="modifyAccount"></param>
+        /// <returns></returns>
         public bool Delete(int articleId, string modifyAccount)
         {
             try
@@ -55,9 +66,13 @@ namespace CMS.Service
                 Console.WriteLine(e);
                 throw;
             }
-            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 查詢ByID
+        /// </summary>
+        /// <param name="articleId"></param>
+        /// <returns></returns>
         public ArticleInfo GetByArticleID(int articleId)
         {
             try
@@ -78,6 +93,12 @@ namespace CMS.Service
             }
         }
 
+        /// <summary>
+        /// 分頁
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <returns></returns>
         public IEnumerable<ArticleInfo> GetPage(int skip, int take)
         {
             try
@@ -100,6 +121,12 @@ namespace CMS.Service
             }
         }
 
+        /// <summary>
+        /// 更新ByID
+        /// </summary>
+        /// <param name="articleId"></param>
+        /// <param name="articleInfo"></param>
+        /// <returns></returns>
         public bool Update(int articleId, ArticleInfo articleInfo)
         {
             try

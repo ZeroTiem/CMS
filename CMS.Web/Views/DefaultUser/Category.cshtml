@@ -1,0 +1,20 @@
+﻿@using CMS.Web.ViewModels
+@model IEnumerable<DefaultUserCategoryViewModel>
+
+@{
+    ViewBag.Title = "Category";
+    Layout = null;
+}
+
+
+@foreach (var Category in Model)
+{
+    if (Category.Kind == "A")
+    {
+        <li><a href="@Url.Action("Index", "Article")?CategoryID=@Category.CategoryID">@Category.CategoryName</a></li>
+    }
+    else
+    {
+        <li><a href="@Url.Action("Index", "FileManage")?CategoryID=@Category.CategoryID">@Category.CategoryName</a></li>
+    }
+}

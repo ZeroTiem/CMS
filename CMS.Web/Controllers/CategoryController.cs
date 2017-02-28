@@ -34,6 +34,19 @@ namespace CMS.Web.Controllers
             return View(CategoryIndexViewModel);
         }
 
+        public ActionResult Manage()
+        {
+            var categoryInfo = _categoryService.GetPage(1, 100);
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<CategoryInfo, CategoryManageViewModel>();
+            });
+            var CategoryManageViewModel = Mapper.Map<IEnumerable<CategoryManageViewModel>>(categoryInfo);
+
+
+            return View(CategoryManageViewModel);
+        }
+
         #region 新增
         public ActionResult Add()
         {

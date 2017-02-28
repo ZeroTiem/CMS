@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("關於", "About", "Home")</li>
                     <li>@Html.ActionLink("連絡方式", "Contact", "Home")</li>
                     <li>@Html.ActionLink("新增版面", "Index", "Category")</li>
+                    @Html.Action("Category", "DefaultUser")
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
