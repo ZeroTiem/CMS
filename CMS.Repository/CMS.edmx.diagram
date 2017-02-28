@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="13539828383e49478fbb5fabba01516a" Name="Diagram1">
-        <EntityTypeShape EntityType="CMSModel.Article" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="CMSModel.Category" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="CMSModel.File" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CMSModel.Article" Width="1.5" PointX="0.5" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

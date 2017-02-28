@@ -24,8 +24,8 @@ namespace CMS.Repository
         public Nullable<System.DateTime> EndDateTime { get; set; }
         public string CreateAccount { get; set; }
         public System.DateTime CreateDateTime { get; set; }
-        public string ModifyAccount { get; set; }
-        public System.DateTime ModifyDateTime { get; set; }
+        public string ModfiyAccount { get; set; }
+        public System.DateTime ModfiyDateTime { get; set; }
         public int PublishStatus { get; set; }
         public int DeleteFalg { get; set; }
     }

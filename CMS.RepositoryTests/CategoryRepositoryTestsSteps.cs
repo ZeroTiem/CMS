@@ -85,7 +85,7 @@ namespace CMS.RepositoryTests
         //public void When透過GetByCategoryID方法查詢第一筆資料()
         //{
         //    var CategoryID = _CmsEntitiesTest.Categories.FirstOrDefault().CategoryID;
-        //    var category = _CategoryRepository.GetByCategoryID(CategoryID);
+        //    var category = _ArticleRepository.GetByCategoryID(CategoryID);
         //    var act = new List<Category>();
         //    act.Add(category);
         //    ScenarioContext.Current.Set(act, "act");

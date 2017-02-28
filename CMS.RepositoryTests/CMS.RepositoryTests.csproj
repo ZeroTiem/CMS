@@ -68,6 +68,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ArticleRepositoryTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArticleRepositoryTests.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ArticleRepositoryTestsSteps.cs" />
     <Compile Include="CategoryRepositoryTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,6 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ArticleRepositoryTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ArticleRepositoryTests.feature.cs</LastGenOutput>
+    </None>
     <None Include="CategoryRepositoryTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CategoryRepositoryTests.feature.cs</LastGenOutput>

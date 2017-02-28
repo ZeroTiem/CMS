@@ -19,8 +19,8 @@
           <Property Name="EndDateTime" Type="datetime" />
           <Property Name="CreateAccount" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
-          <Property Name="ModifyAccount" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="ModifyDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ModfiyAccount" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ModfiyDateTime" Type="datetime" Nullable="false" />
           <Property Name="PublishStatus" Type="int" Nullable="false" />
           <Property Name="DeleteFalg" Type="int" Nullable="false" />
         </EntityType>
@@ -66,29 +66,10 @@
     <edmx:ConceptualModels>
       <Schema Namespace="CMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="CMSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Articles" EntityType="CMSModel.Article" />
           <EntitySet Name="Categories" EntityType="CMSModel.Category" />
           <EntitySet Name="Files" EntityType="CMSModel.File" />
+          <EntitySet Name="Articles" EntityType="CMSModel.Article" />
         </EntityContainer>
-        <EntityType Name="Article">
-          <Key>
-            <PropertyRef Name="ArticleID" />
-          </Key>
-          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CategoryID" Type="Int32" Nullable="false" />
-          <Property Name="Tags" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImgUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="StratDateTime" Type="DateTime" Precision="3" />
-          <Property Name="EndDateTime" Type="DateTime" Precision="3" />
-          <Property Name="CreateAccount" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifyAccount" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="ModifyDateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="PublishStatus" Type="Int32" Nullable="false" />
-          <Property Name="DeleteFalg" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -121,32 +102,31 @@
           <Property Name="PublishStatus" Type="Int32" Nullable="false" />
           <Property Name="DeleteFalg" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Tags" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImgUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StratDateTime" Type="DateTime" Precision="3" />
+          <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateAccount" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModfiyAccount" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ModfiyDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PublishStatus" Type="Int32" Nullable="false" />
+          <Property Name="DeleteFalg" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CMSModelStoreContainer" CdmEntityContainer="CMSEntities">
-          <EntitySetMapping Name="Articles">
-            <EntityTypeMapping TypeName="CMSModel.Article">
-              <MappingFragment StoreEntitySet="Article">
-                <ScalarProperty Name="DeleteFalg" ColumnName="DeleteFalg" />
-                <ScalarProperty Name="PublishStatus" ColumnName="PublishStatus" />
-                <ScalarProperty Name="ModifyDateTime" ColumnName="ModifyDateTime" />
-                <ScalarProperty Name="ModifyAccount" ColumnName="ModifyAccount" />
-                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
-                <ScalarProperty Name="CreateAccount" ColumnName="CreateAccount" />
-                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
-                <ScalarProperty Name="StratDateTime" ColumnName="StratDateTime" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Tags" ColumnName="Tags" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="CMSModel.Category">
               <MappingFragment StoreEntitySet="Category">
@@ -178,6 +158,26 @@
                 <ScalarProperty Name="Tags" ColumnName="Tags" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="CMSModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="DeleteFalg" ColumnName="DeleteFalg" />
+                <ScalarProperty Name="PublishStatus" ColumnName="PublishStatus" />
+                <ScalarProperty Name="ModfiyDateTime" ColumnName="ModfiyDateTime" />
+                <ScalarProperty Name="ModfiyAccount" ColumnName="ModfiyAccount" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="CreateAccount" ColumnName="CreateAccount" />
+                <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+                <ScalarProperty Name="StratDateTime" ColumnName="StratDateTime" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
