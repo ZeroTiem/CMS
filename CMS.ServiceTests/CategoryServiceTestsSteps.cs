@@ -87,7 +87,7 @@ namespace CMS.ServiceTests
             var categoryId = ScenarioContext.Current.Get<int>("CategoryID");
 
             //act
-            CategoryInfo categoryInfo = _categoryService.GetByCategory(categoryId);
+            CategoryInfo categoryInfo = _categoryService.GetByCategoryId(categoryId);
 
             var act = new List<CategoryInfo>();
             act.Add(categoryInfo);
@@ -110,11 +110,12 @@ namespace CMS.ServiceTests
         [When(@"使用Delete方法")]
         public void When使用Delete方法()
         {
+            var modfiyAccount = "test";
             var categoryId = ScenarioContext.Current.Get<int>("CategoryID");
-            mork.Delete(Arg.Any<int>()).Returns(true);
+            mork.Delete(Arg.Any<int>(),Arg.Any<string>()).Returns(true);
 
             //act
-            var act = _categoryService.Delete(categoryId);
+            var act = _categoryService.Delete(categoryId, modfiyAccount);
 
             ScenarioContext.Current.Set(act, "act");
         }

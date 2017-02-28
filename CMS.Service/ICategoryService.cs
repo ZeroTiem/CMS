@@ -11,8 +11,8 @@ namespace CMS.Service
     {
         bool Add(CategoryInfo category);
         bool Update(int categoryId, CategoryInfo category);
-        CategoryInfo GetByCategory(int categoryId);
+        CategoryInfo GetByCategoryId(int categoryId);
         IEnumerable<CategoryInfo> GetPage(int i, int i1);
-        bool Delete(int categoryId);
+        bool Delete(int categoryId, string modfiyAccount);
     }
 }

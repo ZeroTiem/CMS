@@ -1,0 +1,84 @@
+﻿@using CMS.Web.ViewModels;
+@model IEnumerable<CategoryIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br/>
+<div class="form-group">
+    <div class="col-md-10">
+    </div>
+    <div class="col-md-2">
+        <input class="btn btn-primary active" type="button" onclick="location.href='@Url.Action("Add","Category")';" value="新增"/>
+    </div>
+</div>
+<br />
+<br />
+<table class="table table-striped">
+    <tr>
+        <td>編號</td>
+        <td>名稱</td>
+        <td>狀態</td>
+        <td>類別</td>
+        <td>編輯</td>
+        <td>刪除</td>
+    </tr>
+    @foreach (var category in Model)
+    {
+
+        <tr>
+            @{ var PublishStatusShow = category.PublishStatus == 1 ? "開啟" : "關閉"; }
+            
+            <td>@category.CategoryID</td>
+            <td>@category.CategoryName</td>
+            <td>@PublishStatusShow</td>
+            <td>@category.Kind</td>
+            <td><a class="btn btn-primary active" href="@Url.Action("Update","Category")?CategoryID=@category.CategoryID">編輯</a></td>
+            <td><a class="btn btn-primary active" onclick="btnCategoryDelete(@category.CategoryID);">刪除</a></td>
+        </tr>
+                }
+</table>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        console.log("ready!");
+    });
+
+    function btnCategoryDelete(CategoryID) {
+
+        var confirmCheck = confirm("確定刪除 編號：[" + CategoryID + "]");
+        if (confirmCheck === true) {
+            CategoryApiDelete(CategoryID);
+
+        };
+    };
+
+    function CategoryApiDelete(CategoryID) {
+        $.ajax({
+            url: "@Url.Action("CategoryApi", "api")" + "/" + CategoryID,
+            dataType: 'json',
+            //contentType: 'application/json; charset=utf-8',
+            type: 'Delete',
+            //data: formdata,
+            async: false,
+            cache: false,
+            success: function (data) {
+                if (data) {
+                    alert("成功刪除");
+                    location.href = "@Url.Action("Index","Category")";
+                } else {
+                    alert("刪除失敗");
+                }
+            },
+            error: function (response) {
+                alert("發生錯誤" + response);
+            },
+            complete: function () {
+            }
+        });
+    };
+</script>

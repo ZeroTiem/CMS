@@ -71,12 +71,15 @@ namespace CMS.Repository
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-        public bool Delete(int categoryId)
+        public bool Delete(int categoryId,string ModfiyAccount)
         {
             try
             {
                 var categoryEntities = _cmsEntities.Categories.Find(categoryId);
+                categoryEntities.ModfiyAccount = ModfiyAccount;
+                categoryEntities.ModfiyDateTime = _dateAndTime.Get();
                 categoryEntities.DeleteFalg = 1;
+
                 _cmsEntities.SaveChanges();
                 return true;
             }
@@ -116,7 +119,7 @@ namespace CMS.Repository
         {
             try
             {
-                var categorys = _cmsEntities.Categories.OrderBy(x => x.CategoryID).Skip(skip - 1).Take(take);
+                var categorys = _cmsEntities.Categories.OrderBy(x => x.CategoryID).Skip(skip - 1).Take(take).Where(x => x.DeleteFalg == 0);
                 return categorys;
             }
             catch (Exception e)

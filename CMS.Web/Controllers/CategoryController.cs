@@ -23,9 +23,18 @@ namespace CMS.Web.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            return View();
+            var categoryInfo =  _categoryService.GetPage(1, 100);
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<CategoryInfo,CategoryIndexViewModel>();
+            });
+            var CategoryIndexViewModel = Mapper.Map<IEnumerable<CategoryIndexViewModel>>(categoryInfo);
+
+
+            return View(CategoryIndexViewModel);
         }
 
+        #region 新增
         public ActionResult Add()
         {
             return View();
@@ -47,7 +56,26 @@ namespace CMS.Web.Controllers
 
                 _categoryService.Add(categoryInfo);
             }
-            return View();
+
+            return RedirectToAction("Index", "Category");
+            //return View();
         }
+        #endregion
+
+        #region 修改
+        public ActionResult Update(int categoryId)
+        {
+            var categoryInfo = _categoryService.GetByCategoryId(categoryId);
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<CategoryInfo, CategoryUpdateViewModel>();
+            });
+            var CategoryUpdateViewModel = Mapper.Map<CategoryUpdateViewModel> (categoryInfo);
+            return View(CategoryUpdateViewModel);
+        }
+        
+
+        #endregion
+
     }
 }

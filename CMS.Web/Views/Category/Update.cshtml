@@ -1,0 +1,99 @@
+﻿@using CMS.Web.ViewModels;
+@model CategoryUpdateViewModel
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<h2>新增</h2>
+<form class="form-horizontal" method="post" role="form">
+    <div class="form-group">
+        <label for="CategoryName" class="col-sm-2 control-label">名稱</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="CategoryName" name="CategoryName" placeholder="請輸入名稱" value="@Model.CategoryName" />
+            @Html.ValidationMessage("CategoryName", new { @class = "bg-info", style = "color:red;" })
+            @*@Html.ValidationMessageFor(x => x.CategoryName)*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">類別</label>
+        <div class="col-sm-10">
+            <select class="form-control" name="Kind" id="Kind">
+                <option value="1">文章</option>
+                <option value="0">檔案</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.Kind)
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">狀態</label>
+        <div class="col-sm-10">
+            <select class="form-control" name="PublishStatus" id="PublishStatus">
+                <option value="1">開啟</option>
+                <option value="0">關閉</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.PublishStatus)
+        </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" id="btnCategoryUpdate">修改</button>
+        <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Index","Category")'">返回</button>
+    </div>
+</form>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        _click();
+        _select();
+    });
+
+    function _click() {
+        $('#btnCategoryUpdate').click(function(e) {
+            e.preventDefault();
+            debugger ;
+            var formdata = $('form').serialize();
+            CategoryApiUpdate(@Model.CategoryID, formdata);
+        });
+    };
+
+    function _select() {
+        SelectDefault('#PublishStatus', @Model.PublishStatus);
+        SelectDefault('#Kind', @Model.Kind);
+    };
+
+
+    function SelectDefault(Selectid, Value) {
+        $(Selectid + ' option').each(function (i, item) {
+            if ($(item).val() == Value) {
+                $(item).attr('selected', true);
+            }
+        });
+    };
+
+    function CategoryApiUpdate(CategoryID,formdata) {
+        $.ajax({
+            url: "@Url.Action("CategoryApi", "api")" + "?CategoryID=" + CategoryID,
+            dataType: 'json',
+            //contentType: 'application/json; charset=utf-8',
+            type: 'PUT',
+            data: formdata,
+            async: false,
+            cache: false,
+            success: function (data) {
+                if (data) {
+                    alert("修改成功");
+                    location.href = "@Url.Action("Index","Category")";
+                } else {
+                    alert("修改失敗");
+                }
+            },
+            error: function (response) {
+                alert("發生錯誤" + response);
+            },
+            complete: function () {
+            }
+        });
+    };
+</script>

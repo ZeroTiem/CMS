@@ -63,7 +63,7 @@ namespace CMS.Service
             }
         }
 
-        public CategoryInfo GetByCategory(int categoryId)
+        public CategoryInfo GetByCategoryId(int categoryId)
         {
             try
             {
@@ -107,11 +107,11 @@ namespace CMS.Service
             }
         }
 
-        public bool Delete(int categoryId)
+        public bool Delete(int categoryId,string ModfiyAccount)
         {
             try
             {
-                return _categoryRepository.Delete(categoryId);
+                return _categoryRepository.Delete(categoryId, ModfiyAccount);
             }
             catch (Exception e)
             {
