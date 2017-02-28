@@ -105,7 +105,6 @@ namespace CMS.RepositoryTests
         [When(@"透過GetByPage方法取第(.*)筆取(.*)筆")]
         public void When透過GetByPage方法取第筆取筆(int skip, int take)
         {
-            var category = _CmsEntitiesTest.Categories.OrderBy(x => x.CategoryID).Skip(skip - 1).Take(take);
             var act = _CategoryRepository.GetByPage(skip, take);
             ScenarioContext.Current.Set(act, "act");
         }

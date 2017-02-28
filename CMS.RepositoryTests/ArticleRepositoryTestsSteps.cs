@@ -77,21 +77,32 @@ namespace CMS.RepositoryTests
         }
         
         [When(@"透過GetByArticleID方法查詢第 (.*) 筆資料")]
-        public void When透過GetByArticleID方法查詢第筆資料(int p0)
+        public void When透過GetByArticleID方法查詢第筆資料(int countNumber)
         {
-            ScenarioContext.Current.Pending();
+
+            var articleId = _CmsEntitiesTest.Articles.OrderBy(x => x.ArticleID).Skip(countNumber - 1).Take(1)
+                .FirstOrDefault().ArticleID;
+            var article = _ArticleRepository.GetByArticleID(articleId);
+            var act = new List<Article>();
+            act.Add(article);
+            ScenarioContext.Current.Set(act, "act");
         }
         
         [When(@"透過Delete方法刪除第一筆資料")]
         public void When透過Delete方法刪除第一筆資料()
-        {
-            ScenarioContext.Current.Pending();
+                 {
+            var ModfiyAccount = "test";
+            var articleId = _CmsEntitiesTest.Articles.FirstOrDefault().ArticleID;
+            _ArticleRepository.Delete(articleId, ModfiyAccount);
+            var act = _CmsEntitiesTest.Articles.AsNoTracking().Where(x => x.DeleteFalg == 0);
+            ScenarioContext.Current.Set(act, "act");
         }
         
         [When(@"透過GetByPage方法取第(.*)筆取(.*)筆")]
-        public void When透過GetByPage方法取第筆取筆(int p0, int p1)
+        public void When透過GetByPage方法取第筆取筆(int skip, int take)
         {
-            ScenarioContext.Current.Pending();
+            var act = _ArticleRepository.GetByPage(skip, take);
+            ScenarioContext.Current.Set(act, "act");
         }
         
         [Then(@"要跟預期內容一樣")]

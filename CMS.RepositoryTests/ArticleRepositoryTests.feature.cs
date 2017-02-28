@@ -216,44 +216,57 @@ this.ScenarioSetup(scenarioInfo);
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ArticleName",
-                        "Kind",
-                        "publishStatus",
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
                         "CreateAccount",
                         "CreateDateTime",
                         "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModfiyDateTime",
+                        "PublishStatus"});
             table6.AddRow(new string[] {
                         "1",
-                        "1",
-                        "1",
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
                         "test",
-                        "2017-02-27",
                         "test",
-                        "2017-02-27"});
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table6.AddRow(new string[] {
                         "2",
-                        "2",
-                        "2",
+                        "tag2",
+                        "name2",
+                        "\"test2.jpg\"",
                         "test2",
-                        "2017-02-27",
                         "test2",
-                        "2017-02-27"});
+                        "2017-02-28",
+                        "test2",
+                        "2017-02-28",
+                        "2"});
 #line 31
  testRunner.Given("新增測試資料", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ArticleName",
-                        "Kind",
-                        "publishStatus",
-                        "CreateAccount",
-                        "ModfiyAccount"});
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
+                        "ModfiyAccount",
+                        "PublishStatus"});
             table7.AddRow(new string[] {
                         "2",
-                        "2",
-                        "2",
+                        "tag2",
+                        "name2",
+                        "\"test2.jpg\"",
                         "test2",
-                        "test2"});
+                        "test2",
+                        "2"});
 #line 35
  testRunner.And("預期回傳資料", ((string)(null)), table7, "And ");
 #line 38
@@ -274,44 +287,57 @@ this.ScenarioSetup(scenarioInfo);
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ArticleName",
-                        "Kind",
-                        "publishStatus",
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
                         "CreateAccount",
                         "CreateDateTime",
                         "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModfiyDateTime",
+                        "PublishStatus"});
             table8.AddRow(new string[] {
                         "1",
-                        "1",
-                        "1",
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
                         "test",
-                        "2017-02-27",
                         "test",
-                        "2017-02-27"});
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table8.AddRow(new string[] {
                         "2",
-                        "2",
-                        "2",
+                        "tag2",
+                        "name2",
+                        "\"test2.jpg\"",
                         "test2",
-                        "2017-02-27",
                         "test2",
-                        "2017-02-27"});
+                        "2017-02-28",
+                        "test2",
+                        "2017-02-28",
+                        "2"});
 #line 42
  testRunner.Given("新增測試資料", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ArticleName",
-                        "Kind",
-                        "publishStatus",
-                        "CreateAccount",
-                        "ModfiyAccount"});
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
+                        "ModfiyAccount",
+                        "PublishStatus"});
             table9.AddRow(new string[] {
                         "2",
-                        "2",
-                        "2",
+                        "tag2",
+                        "name2",
+                        "\"test2.jpg\"",
                         "test2",
-                        "test2"});
+                        "test2",
+                        "2"});
 #line 46
  testRunner.And("預期回傳資料", ((string)(null)), table9, "And ");
 #line 49
@@ -332,131 +358,166 @@ this.ScenarioSetup(scenarioInfo);
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ArticleName",
-                        "Kind",
-                        "publishStatus",
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
                         "CreateAccount",
                         "CreateDateTime",
                         "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModfiyDateTime",
+                        "PublishStatus"});
             table10.AddRow(new string[] {
                         "1",
-                        "1",
-                        "1",
-                        "test1",
-                        "2017-02-27",
-                        "test1",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "2",
-                        "2",
-                        "2",
+                        "tag2",
+                        "name2",
+                        "\"test2.jpg\"",
                         "test2",
-                        "2017-02-27",
                         "test2",
-                        "2017-02-27"});
+                        "2017-02-28",
+                        "test2",
+                        "2017-02-28",
+                        "2"});
             table10.AddRow(new string[] {
                         "3",
-                        "3",
-                        "3",
-                        "test3",
-                        "2017-02-27",
-                        "test3",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "4",
-                        "4",
-                        "4",
-                        "test4",
-                        "2017-02-27",
-                        "test4",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "5",
-                        "5",
-                        "5",
-                        "test5",
-                        "2017-02-27",
-                        "test5",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "6",
-                        "6",
-                        "6",
-                        "test6",
-                        "2017-02-27",
-                        "test6",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "7",
-                        "7",
-                        "7",
-                        "test7",
-                        "2017-02-27",
-                        "test7",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "8",
-                        "8",
-                        "8",
-                        "test8",
-                        "2017-02-27",
-                        "test8",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "9",
-                        "9",
-                        "9",
-                        "test9",
-                        "2017-02-27",
-                        "test9",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
             table10.AddRow(new string[] {
                         "10",
-                        "10",
-                        "10",
-                        "test10",
-                        "2017-02-27",
-                        "test10",
-                        "2017-02-27"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "2017-02-28",
+                        "test",
+                        "2017-02-28",
+                        "1"});
 #line 53
  testRunner.Given("新增測試資料", ((string)(null)), table10, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ArticleName",
-                        "Kind",
-                        "publishStatus",
-                        "CreateAccount",
-                        "ModfiyAccount"});
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
+                        "ModfiyAccount",
+                        "PublishStatus"});
+            table11.AddRow(new string[] {
+                        "6",
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "1"});
             table11.AddRow(new string[] {
                         "7",
-                        "7",
-                        "7",
-                        "test7",
-                        "test7"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "1"});
             table11.AddRow(new string[] {
                         "8",
-                        "8",
-                        "8",
-                        "test8",
-                        "test8"});
-            table11.AddRow(new string[] {
-                        "9",
-                        "9",
-                        "9",
-                        "test9",
-                        "test9"});
-            table11.AddRow(new string[] {
-                        "10",
-                        "10",
-                        "10",
-                        "test10",
-                        "test10"});
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "1"});
 #line 65
  testRunner.And("預期回傳資料", ((string)(null)), table11, "And ");
+#line 70
+ testRunner.When("透過GetByPage方法取第6筆取3筆", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 71
- testRunner.When("透過GetByPage方法取第7筆取4筆", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
  testRunner.Then("要跟預期內容一樣", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
