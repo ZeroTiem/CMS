@@ -249,18 +249,82 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Article查詢分頁ByCategoryID邏輯")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ArticleServiceTests")]
+        public virtual void Article查詢分頁ByCategoryID邏輯()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Article查詢分頁ByCategoryID邏輯", ((string[])(null)));
+#line 40
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "CategoryID",
+                        "Tags",
+                        "Title",
+                        "ImgUrl",
+                        "Content",
+                        "CreateAccount",
+                        "ModifyAccount",
+                        "PublishStatus"});
+            table5.AddRow(new string[] {
+                        "1",
+                        "tag1",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "test",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "1",
+                        "tag2",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "test",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "1",
+                        "tag3",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "test",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "1",
+                        "tag4",
+                        "name",
+                        "\"test.jpg\"",
+                        "test",
+                        "test",
+                        "test",
+                        "1"});
+#line 41
+ testRunner.Given("預期回傳", ((string)(null)), table5, "Given ");
+#line 47
+ testRunner.When("使用GetByPage方法 ByCategoryID是 1 從 第 1 筆 取 4 筆", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+ testRunner.Then("要跟預期內容一樣", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Category刪除ByArticleID邏輯")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ArticleServiceTests")]
         public virtual void Category刪除ByArticleID邏輯()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Category刪除ByArticleID邏輯", ((string[])(null)));
-#line 40
+#line 50
 this.ScenarioSetup(scenarioInfo);
-#line 41
+#line 51
  testRunner.Given("ArticleID 是 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 42
+#line 52
  testRunner.When("使用Delete方法", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 53
  testRunner.Then("預期回傳true", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

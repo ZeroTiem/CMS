@@ -87,6 +87,21 @@ namespace CMS.Repository
             }
         }
 
+        public IEnumerable<Article> GetByPageByCategoryID(int categoryId, int skip, int take)
+        {
+            try
+            {
+                return _cmsEntities.Articles.Where(x=>x.CategoryID == categoryId && x.DeleteFalg == 0).OrderBy(x => x.ArticleID).Skip(skip - 1).Take(take);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            throw new NotImplementedException();
+        }
+
         public bool Delete(int articleId, string modfiyAccount)
         {
             try
@@ -103,6 +118,6 @@ namespace CMS.Repository
                 Console.WriteLine(e);
                 throw;
             }
-        }
+        }       
     }
 }

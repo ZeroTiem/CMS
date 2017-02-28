@@ -104,7 +104,21 @@ namespace CMS.ServiceTests
 
             ScenarioContext.Current.Set(act, "act");
         }
-        
+
+        [When(@"使用GetByPage方法 ByCategoryID是 (.*) 從 第 (.*) 筆 取 (.*) 筆")]
+        public void When使用GetByPage方法ByCategoryID是從第筆取筆(int CategoryID, int skip, int take)
+        {
+            var expected = ScenarioContext.Current.Get<Table>("expected");
+            var article = expected.CreateSet<Article>();
+            mork.GetByPageByCategoryID(Arg.Is(CategoryID),Arg.Is(skip), Arg.Is(take)).Returns(article);
+
+            //act
+            var act = _articleService.GetByPageByCategoryID(CategoryID, skip, take);
+
+            ScenarioContext.Current.Set(act, "act");
+        }
+
+
         [When(@"使用Delete方法")]
         public void When使用Delete方法()
         {

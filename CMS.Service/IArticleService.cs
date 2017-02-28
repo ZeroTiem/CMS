@@ -13,6 +13,7 @@ namespace CMS.Service
         bool Update(int articleId, ArticleInfo articleInfo);
         ArticleInfo GetByArticleID(int articleId);
         IEnumerable<ArticleInfo> GetPage(int skip, int take);
+        IEnumerable<ArticleInfo> GetByPageByCategoryID(int categoryId, int skip, int take);
         bool Delete(int articleId, string modifyAccount);
     }
 }

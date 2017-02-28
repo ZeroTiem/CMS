@@ -69,3 +69,24 @@ Scenario: Article查詢分頁
 	| 8          | tag1 | name  | "test.jpg"  | test    | test          | 1             |
 	When 透過GetByPage方法取第6筆取3筆
 	Then 要跟預期內容一樣
+
+Scenario: Article查詢分頁ByCategoryID
+	Given 新增測試資料
+	| CategoryID | Tags  | Title | ImgUrl     | Content | CreateAccount | CreateDateTime | ModifyAccount | ModifyDateTime | PublishStatus |
+	| 2          | tag1  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 2          | tag2  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 2          | tag3  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag4  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag5  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag6  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag7  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag8  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag9  | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	| 1          | tag10 | name  | "test.jpg" | test    | test          | 2017-02-28     | test          | 2017-02-28     | 1             |
+	And 預期回傳資料
+	| CategoryID | Tags | Title | ImgUrl      | Content | ModifyAccount | PublishStatus |
+	| 1          | tag5 | name  | "test.jpg"  | test    | test          | 1             |
+	| 1          | tag6 | name  | "test.jpg"  | test    | test          | 1             |
+	| 1          | tag7 | name  | "test.jpg"  | test    | test          | 1             |
+	When 透過ByCategoryID方法取 CategoryID等於1 第2筆取3筆
+	Then 要跟預期內容一樣

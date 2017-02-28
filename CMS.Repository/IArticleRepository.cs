@@ -13,5 +13,6 @@ namespace CMS.Repository
         Article GetByArticleID(int articleId);
         IEnumerable<Article> GetByPage(int skip, int take);
         bool Delete(int articleId, string modfiyAccount);
+        IEnumerable<Article> GetByPageByCategoryID(int categoryId, int skip, int take);
     }
 }

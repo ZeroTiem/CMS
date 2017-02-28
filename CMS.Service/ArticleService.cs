@@ -93,6 +93,28 @@ namespace CMS.Service
             }
         }
 
+        public IEnumerable<ArticleInfo> GetByPageByCategoryID(int categoryId, int skip, int take)
+        {
+            try
+            {
+                var article = _articleRepository.GetByPageByCategoryID(categoryId, skip, take);
+
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<Article, ArticleInfo>();
+                });
+
+                var mapper = Mapper.Map<IEnumerable<ArticleInfo>>(article);
+
+                return mapper;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         /// <summary>
         /// 分頁
         /// </summary>

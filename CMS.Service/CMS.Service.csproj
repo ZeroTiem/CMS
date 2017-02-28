@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="ArticleService.cs" />
     <Compile Include="CategoryService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="FileService.cs" />
     <Compile Include="IArticleService.cs" />
     <Compile Include="ICategoryService.cs" />

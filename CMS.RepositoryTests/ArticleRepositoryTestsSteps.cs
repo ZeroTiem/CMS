@@ -104,7 +104,14 @@ namespace CMS.RepositoryTests
             var act = _ArticleRepository.GetByPage(skip, take);
             ScenarioContext.Current.Set(act, "act");
         }
-        
+
+        [When(@"透過ByCategoryID方法取 CategoryID等於(.*) 第(.*)筆取(.*)筆")]
+        public void When透過ByCategoryID方法取CategoryID等於第筆取筆(int CategoryID, int skip, int take)
+        {
+            var act = _ArticleRepository.GetByPageByCategoryID(CategoryID, skip, take);
+            ScenarioContext.Current.Set(act, "act");
+        }
+
         [Then(@"要跟預期內容一樣")]
         public void Then要跟預期內容一樣()
         {
