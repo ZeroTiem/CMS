@@ -59,7 +59,7 @@
 
     function CategoryApiDelete(CategoryID) {
         $.ajax({
-            url: "@Url.Action("CategoryApi", "api")" + "/" + CategoryID,
+            url: "@Url.Action("CategoryApi", "api")" + "?CategoryID=" + CategoryID,
             dataType: 'json',
             //contentType: 'application/json; charset=utf-8',
             type: 'Delete',
