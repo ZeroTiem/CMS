@@ -47,8 +47,8 @@ namespace CMS.Web.Controllers
             });
             var categoryInfo = Mapper.Map<CategoryInfo>(CategoryUpdateViewModel);
 
-            var modfiyAccount = User.Identity.Name;
-            categoryInfo.ModfiyAccount = modfiyAccount;
+            var modifyAccount = User.Identity.Name;
+            categoryInfo.ModifyAccount = modifyAccount;
 
             return _categoryService.Update(CategoryID, categoryInfo);
         }

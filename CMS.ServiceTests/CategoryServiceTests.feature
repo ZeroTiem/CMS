@@ -6,14 +6,14 @@
 @mytag
 Scenario: Category新增邏輯
 	Given 要新增的資料
-	| CategoryName | Kind | publishStatus | CreateAccount | ModfiyAccount |
+	| CategoryName | Kind | publishStatus | CreateAccount | ModifyAccount |
 	| test         | 1    | 1             | test          | test          |
 	When 使用Add方法新增
 	Then 預期回傳true
 
 Scenario: Category修改ByCategoryID邏輯
 	Given 要修改的資料
-	| CategoryName | Kind | publishStatus | CreateAccount | ModfiyAccount |
+	| CategoryName | Kind | publishStatus | CreateAccount | ModifyAccount |
 	| test         | 1    | 1             | test          | test          |
 	And CategoryID 是 1
 	When 使用Update方法修改
@@ -21,7 +21,7 @@ Scenario: Category修改ByCategoryID邏輯
 
 Scenario: Category查詢ByCategoryID邏輯
 	Given 預期回傳
-	| CategoryName | Kind | publishStatus | CreateAccount | CreateDateTime | ModfiyAccount | ModfiyDateTime |
+	| CategoryName | Kind | publishStatus | CreateAccount | CreateDateTime | ModifyAccount | ModifyDateTime |
 	| test         | 1    | 1             | test          | 2017-02-27     | test          | 2017-02-27     |
 	And CategoryID 是 1
 	When 使用GetByCategoryID方法
@@ -29,7 +29,7 @@ Scenario: Category查詢ByCategoryID邏輯
 
 Scenario: Category查詢分頁邏輯
 	Given 預期回傳
-	| CategoryName | Kind | publishStatus | CreateAccount | CreateDateTime | ModfiyAccount | ModfiyDateTime |
+	| CategoryName | Kind | publishStatus | CreateAccount | CreateDateTime | ModifyAccount | ModifyDateTime |
 	| test         | 1    | 1             | test          | 2017-02-27     | test          | 2017-02-27     |
 	| test         | 2    | 2             | test          | 2017-02-27     | test          | 2017-02-27     |
 	| test         | 3    | 3             | test          | 2017-02-27     | test          | 2017-02-27     |

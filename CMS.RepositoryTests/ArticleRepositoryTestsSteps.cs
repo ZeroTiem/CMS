@@ -91,9 +91,9 @@ namespace CMS.RepositoryTests
         [When(@"透過Delete方法刪除第一筆資料")]
         public void When透過Delete方法刪除第一筆資料()
                  {
-            var ModfiyAccount = "test";
+            var ModifyAccount = "test";
             var articleId = _CmsEntitiesTest.Articles.FirstOrDefault().ArticleID;
-            _ArticleRepository.Delete(articleId, ModfiyAccount);
+            _ArticleRepository.Delete(articleId, ModifyAccount);
             var act = _CmsEntitiesTest.Articles.AsNoTracking().Where(x => x.DeleteFalg == 0);
             ScenarioContext.Current.Set(act, "act");
         }

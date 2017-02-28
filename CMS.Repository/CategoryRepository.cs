@@ -28,7 +28,7 @@ namespace CMS.Repository
             try
             {
                 category.CreateDateTime = _dateAndTime.Get();
-                category.ModfiyDateTime = _dateAndTime.Get();
+                category.ModifyDateTime = _dateAndTime.Get();
                 _cmsEntities.Categories.Add(category);
                 _cmsEntities.SaveChanges();
                 return true;
@@ -54,8 +54,8 @@ namespace CMS.Repository
                 categoryEntities.CategoryName = category.CategoryName;
                 categoryEntities.Kind = category.Kind;
                 categoryEntities.PublishStatus = category.PublishStatus;
-                categoryEntities.ModfiyAccount = category.ModfiyAccount;
-                categoryEntities.ModfiyDateTime = _dateAndTime.Get();
+                categoryEntities.ModifyAccount = category.ModifyAccount;
+                categoryEntities.ModifyDateTime = _dateAndTime.Get();
                 _cmsEntities.SaveChanges();
                 return true;
             }
@@ -71,13 +71,13 @@ namespace CMS.Repository
         /// </summary>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-        public bool Delete(int categoryId,string ModfiyAccount)
+        public bool Delete(int categoryId,string ModifyAccount)
         {
             try
             {
                 var categoryEntities = _cmsEntities.Categories.Find(categoryId);
-                categoryEntities.ModfiyAccount = ModfiyAccount;
-                categoryEntities.ModfiyDateTime = _dateAndTime.Get();
+                categoryEntities.ModifyAccount = ModifyAccount;
+                categoryEntities.ModifyDateTime = _dateAndTime.Get();
                 categoryEntities.DeleteFalg = 1;
 
                 _cmsEntities.SaveChanges();

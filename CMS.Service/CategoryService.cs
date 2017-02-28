@@ -107,11 +107,11 @@ namespace CMS.Service
             }
         }
 
-        public bool Delete(int categoryId,string ModfiyAccount)
+        public bool Delete(int categoryId,string ModifyAccount)
         {
             try
             {
-                return _categoryRepository.Delete(categoryId, ModfiyAccount);
+                return _categoryRepository.Delete(categoryId, ModifyAccount);
             }
             catch (Exception e)
             {

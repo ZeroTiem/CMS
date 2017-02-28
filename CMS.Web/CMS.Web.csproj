@@ -232,7 +232,9 @@
     <Compile Include="ViewModels\CategoryUpdateViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CMS.mdf" />
+    <Content Include="App_Data\CMS.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\CMS_log.ldf">
       <DependentUpon>CMS.mdf</DependentUpon>
     </Content>

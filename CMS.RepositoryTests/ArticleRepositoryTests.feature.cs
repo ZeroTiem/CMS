@@ -85,7 +85,7 @@ this.ScenarioSetup(scenarioInfo);
                         "ImgUrl",
                         "Content",
                         "CreateAccount",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table1.AddRow(new string[] {
                         "1",
@@ -106,7 +106,7 @@ this.ScenarioSetup(scenarioInfo);
                         "ImgUrl",
                         "Content",
                         "CreateAccount",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table2.AddRow(new string[] {
                         "1",
@@ -144,8 +144,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Content",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime",
+                        "ModifyAccount",
+                        "ModifyDateTime",
                         "PublishStatus"});
             table3.AddRow(new string[] {
                         "1",
@@ -167,7 +167,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title",
                         "ImgUrl",
                         "Content",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table4.AddRow(new string[] {
                         "2",
@@ -186,7 +186,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title",
                         "ImgUrl",
                         "Content",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table5.AddRow(new string[] {
                         "2",
@@ -223,8 +223,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Content",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime",
+                        "ModifyAccount",
+                        "ModifyDateTime",
                         "PublishStatus"});
             table6.AddRow(new string[] {
                         "1",
@@ -257,7 +257,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title",
                         "ImgUrl",
                         "Content",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table7.AddRow(new string[] {
                         "2",
@@ -294,8 +294,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Content",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime",
+                        "ModifyAccount",
+                        "ModifyDateTime",
                         "PublishStatus"});
             table8.AddRow(new string[] {
                         "1",
@@ -328,7 +328,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title",
                         "ImgUrl",
                         "Content",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table9.AddRow(new string[] {
                         "2",
@@ -365,8 +365,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Content",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime",
+                        "ModifyAccount",
+                        "ModifyDateTime",
                         "PublishStatus"});
             table10.AddRow(new string[] {
                         "1",
@@ -487,7 +487,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Title",
                         "ImgUrl",
                         "Content",
-                        "ModfiyAccount",
+                        "ModifyAccount",
                         "PublishStatus"});
             table11.AddRow(new string[] {
                         "6",

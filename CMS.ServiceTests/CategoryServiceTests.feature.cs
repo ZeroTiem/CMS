@@ -83,7 +83,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table1.AddRow(new string[] {
                         "test",
                         "1",
@@ -114,7 +114,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table2.AddRow(new string[] {
                         "test",
                         "1",
@@ -148,8 +148,8 @@ this.ScenarioSetup(scenarioInfo);
                         "publishStatus",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModifyAccount",
+                        "ModifyDateTime"});
             table3.AddRow(new string[] {
                         "test",
                         "1",
@@ -185,8 +185,8 @@ this.ScenarioSetup(scenarioInfo);
                         "publishStatus",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModifyAccount",
+                        "ModifyDateTime"});
             table4.AddRow(new string[] {
                         "test",
                         "1",

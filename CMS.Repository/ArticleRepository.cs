@@ -23,7 +23,7 @@ namespace CMS.Repository
             try
             {
                 article.CreateDateTime = _dateAndTime.Get();
-                article.ModfiyDateTime = _dateAndTime.Get();
+                article.ModifyDateTime = _dateAndTime.Get();
                 _cmsEntities.Articles.Add(article);
                 _cmsEntities.SaveChanges();
                 return true;
@@ -47,8 +47,8 @@ namespace CMS.Repository
                 articlesEntities.Content = article.Content;  
                 articlesEntities.StratDateTime = article.StratDateTime;
                 articlesEntities.EndDateTime = article.EndDateTime;
-                articlesEntities.ModfiyAccount = article.ModfiyAccount;
-                articlesEntities.ModfiyDateTime = _dateAndTime.Get();
+                articlesEntities.ModifyAccount = article.ModifyAccount;
+                articlesEntities.ModifyDateTime = _dateAndTime.Get();
                 articlesEntities.PublishStatus = article.PublishStatus;
                 _cmsEntities.SaveChanges();
                 return true;
@@ -93,8 +93,8 @@ namespace CMS.Repository
             {
                 var articleEntities =  _cmsEntities.Articles.Find(articleId);
                 articleEntities.DeleteFalg = 1;
-                articleEntities.ModfiyAccount = modfiyAccount;
-                articleEntities.ModfiyDateTime = _dateAndTime.Get();
+                articleEntities.ModifyAccount = modfiyAccount;
+                articleEntities.ModifyDateTime = _dateAndTime.Get();
                 _cmsEntities.SaveChanges();
                 return true;
             }

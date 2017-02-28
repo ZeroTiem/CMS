@@ -12,6 +12,7 @@ using NSubstitute;
 namespace CMS.ServiceTests
 {
     [Binding]
+    [Scope(Feature = "CategoryServiceTests")]
     public class CategoryServiceTestsSteps
     {
         private ICategoryService _categoryService;
@@ -110,12 +111,12 @@ namespace CMS.ServiceTests
         [When(@"使用Delete方法")]
         public void When使用Delete方法()
         {
-            var modfiyAccount = "test";
+            var modifyAccount = "test";
             var categoryId = ScenarioContext.Current.Get<int>("CategoryID");
             mork.Delete(Arg.Any<int>(),Arg.Any<string>()).Returns(true);
 
             //act
-            var act = _categoryService.Delete(categoryId, modfiyAccount);
+            var act = _categoryService.Delete(categoryId, modifyAccount);
 
             ScenarioContext.Current.Set(act, "act");
         }

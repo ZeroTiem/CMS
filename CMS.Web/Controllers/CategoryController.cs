@@ -52,7 +52,7 @@ namespace CMS.Web.Controllers
                 var categoryInfo = Mapper.Map<CategoryInfo>(categoryAddViewModel);
 
                 categoryInfo.CreateAccount = User.Identity.Name;
-                categoryInfo.ModfiyAccount = User.Identity.Name;
+                categoryInfo.ModifyAccount = User.Identity.Name;
 
                 _categoryService.Add(categoryInfo);
             }

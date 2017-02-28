@@ -83,7 +83,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table1.AddRow(new string[] {
                         "test",
                         "1",
@@ -98,7 +98,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table2.AddRow(new string[] {
                         "test",
                         "1",
@@ -130,8 +130,8 @@ this.ScenarioSetup(scenarioInfo);
                         "publishStatus",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModifyAccount",
+                        "ModifyDateTime"});
             table3.AddRow(new string[] {
                         "test",
                         "1",
@@ -148,7 +148,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table4.AddRow(new string[] {
                         "test1",
                         "2",
@@ -163,7 +163,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table5.AddRow(new string[] {
                         "test1",
                         "2",
@@ -195,8 +195,8 @@ this.ScenarioSetup(scenarioInfo);
                         "publishStatus",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModifyAccount",
+                        "ModifyDateTime"});
             table6.AddRow(new string[] {
                         "1",
                         "1",
@@ -221,7 +221,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table7.AddRow(new string[] {
                         "2",
                         "2",
@@ -253,8 +253,8 @@ this.ScenarioSetup(scenarioInfo);
                         "publishStatus",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModifyAccount",
+                        "ModifyDateTime"});
             table8.AddRow(new string[] {
                         "1",
                         "1",
@@ -279,7 +279,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table9.AddRow(new string[] {
                         "2",
                         "2",
@@ -311,8 +311,8 @@ this.ScenarioSetup(scenarioInfo);
                         "publishStatus",
                         "CreateAccount",
                         "CreateDateTime",
-                        "ModfiyAccount",
-                        "ModfiyDateTime"});
+                        "ModifyAccount",
+                        "ModifyDateTime"});
             table10.AddRow(new string[] {
                         "1",
                         "1",
@@ -401,7 +401,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Kind",
                         "publishStatus",
                         "CreateAccount",
-                        "ModfiyAccount"});
+                        "ModifyAccount"});
             table11.AddRow(new string[] {
                         "7",
                         "7",

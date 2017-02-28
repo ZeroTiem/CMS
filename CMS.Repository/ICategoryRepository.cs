@@ -7,7 +7,7 @@ namespace CMS.Repository
     {
         bool Add(Category category);
         bool Update(int categoryId, Category category);
-        bool Delete(int categoryId, string ModfiyAccount);
+        bool Delete(int categoryId, string ModifyAccount);
         Category GetByCategoryID(int categoryID);
         IEnumerable<Category> GetByPage(int skip, int take);
     }
